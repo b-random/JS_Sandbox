@@ -19,7 +19,7 @@
 // taskTitle.innerText = 'My Tasks';
 // taskTitle.innerHTML = '<span style="color:red">Task List</span>';
 
-// document.querySelector()
+// document.querySelector()...............................
 
 // console.log(document.querySelector('#task-title'));
 // console.log(document.querySelector('.card-title'));
@@ -35,7 +35,7 @@
 // document.querySelector('li:nth-child(even)').style.background = '#f4f4f4';
 
 
-//multiple elements selectors
+//multiple elements selectors.............................
 
 
 // const items = document.getElementsByClassName('collection-item');
@@ -45,7 +45,7 @@
 // items[0].style.color = 'blue';
 // items[0].textContent = 'blue';
 
-//getElementsByTagName
+//getElementsByTagName....................................
 
 // let lis = document.getElementsByTagName('li');
 
@@ -60,20 +60,95 @@
 //   li.style.color = 'orange';
 // })
 
-//doc.querySelectorAll()
+//doc.querySelectorAll()..................................
 
-const items = document.querySelectorAll('li');
-//console.log(items[1].style.color='purple');
-const odder = document.querySelectorAll('li:nth-child(odd)');
-const evener = document.querySelectorAll('li:nth-child(even)');
+// const items = document.querySelectorAll('li');
+// //console.log(items[1].style.color='purple');
+// const odder = document.querySelectorAll('li:nth-child(odd)');
+// const evener = document.querySelectorAll('li:nth-child(even)');
 
-odder.forEach(function(i){
-  i.style.color = 'green'
-});
+// odder.forEach(function(i){
+//   i.style.color = 'green'
+// });
 
-for(let x=0; x < evener.length; x++){
-  evener[x].style.background = 'grey';
-};
+// for(let x=0; x < evener.length; x++){
+//   evener[x].style.background = 'grey';
+//};
+
+//Traversing the DOM......................................
+
+let val;
+
+const list = document.querySelector('ul.collection');
+
+val = list;
+//get child nodes
+
+val = list.childNodes; //returns node called text that acts as linebreak
+
+//iterate through a node list by index
+
+val = list.childNodes;
+val = list.childNodes[1].nodeName;
+val = list.childNodes[10].nodeType; 
+//see node type return values:
+
+// 1 = Element
+// 2 = Attribute (deprecated)
+// 3 - Text nodeName
+// 8 = Comment
+// 9 - Document itself
+// 10 = Doctype
+
+
+val = list.children;
+//val = list.children[0];
+val[0].textContent = 'hello';
+val = list.children[3].children[0]; //reurns <a
+
+val = list.firstChild;
+val = list.firstElementChild;
+val = list.lastChild;
+
+val = list.childElementCount;
+
+
+
+//get .Children element nodes i.e. w/o text. returns html-collection
+//val = list.children;
+
+//get parent node
+
+
+const listItem = document.querySelector('li.collection-item:first-child');
+val = listItem;
+
+
+val = listItem.parentNode;
+val = listItem.parentElement;
+val = listItem.parentElement.parentElement;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(val);
+
+
 
 
 
