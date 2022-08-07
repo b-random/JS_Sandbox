@@ -103,7 +103,7 @@ val = list.childNodes[10].nodeType;
 
 val = list.children;
 //val = list.children[0];
-val[0].textContent = 'hello';
+//val[0].textContent = 'hello';
 val = list.children[3].children[0]; //reurns <a
 
 val = list.firstChild;
@@ -129,6 +129,41 @@ val = listItem.parentElement;
 val = listItem.parentElement.parentElement;
 
 
+// .......................................................
+
+//creating elements in the dom
+
+
+{/*Add this html to the dom:
+
+<li class="collection-item">
+List Item
+<a href="#" class="delete-item secondary-content">
+<i class="fa fa-remove"></i>
+</a>
+</li></> */}
+
+//1. create the element
+
+const li = document.createElement('li');
+const link = document.createElement('a');
+
+//create it with a class/id
+li.className = 'collection-item';
+li.id = 'new-id';
+link.className = "delete-item secondary-content"
+
+//to add content that is actual html, but no text nodes or links (<i class="fa fa-remove"></i>)...
+link.innerHTML = '<i class="fa fa-remove"></i>';
+//innerHTML returns just the human readable text, while textContent will return the element tags as well
+
+//create a text node toappend the new element with text
+li.appendChild(document.createTextNode('NEW ITEM'));
+
+li.appendChild(link);
+
+//changes to this point are only seen in the console. to push these changes to the page...
+document.querySelector('ul.collection').appendChild(li);
 
 
 
@@ -146,7 +181,9 @@ val = listItem.parentElement.parentElement;
 
 
 
-console.log(val);
+
+
+console.log(link);
 
 
 
